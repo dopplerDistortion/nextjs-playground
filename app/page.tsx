@@ -32,6 +32,24 @@ export default function Home() {
     }
   };
 
+  const convertToRoman = (num: number) => {
+    const units = {
+      I: 1,
+      V: 5,
+    };
+    const tens = {
+      X: 10,
+      L: 50,
+    };
+    const hundreds = {
+      C: 100,
+      D: 500,
+    };
+    const thousands = {
+      M: 1000,
+    };
+  };
+
   return (
     <div className="flex flex-col justify-center items-center h-screen p-8 sm:p-0">
       <div className="text-4xl font-bold mb-4 h-24">{value}</div>
