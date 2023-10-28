@@ -3,6 +3,7 @@ import {ThemeProvider} from '@/components/providers/theme-provider';
 import {cn} from '@/lib/utils';
 import {Nunito_Sans as FontSans} from 'next/font/google';
 import {ThemeWrapper} from '@/components/providers/theme-wrapper';
+import {Analytics} from '@vercel/analytics/react';
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -22,7 +23,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          <ThemeWrapper>{children}</ThemeWrapper>
+          <ThemeWrapper>
+            {children}
+            <Analytics />
+          </ThemeWrapper>
         </ThemeProvider>
       </body>
     </html>
