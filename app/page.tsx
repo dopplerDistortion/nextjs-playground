@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/card';
 import {Input} from '@/components/ui/input';
 import {Separator} from '@/components/ui/separator';
-import {cn} from '@/lib/utils';
+import {cn, integerToRoman} from '@/lib/utils';
 import {useTheme} from 'next-themes';
 import {Roboto_Slab} from 'next/font/google';
 import {useEffect, useState} from 'react';
@@ -21,24 +21,6 @@ export const robotSlab = Roboto_Slab({
 
 export default function Home() {
   const [value, setValue] = useState('');
-
-  const convertToRoman = (num: number) => {
-    const units = {
-      I: 1,
-      V: 5,
-    };
-    const tens = {
-      X: 10,
-      L: 50,
-    };
-    const hundreds = {
-      C: 100,
-      D: 500,
-    };
-    const thousands = {
-      M: 1000,
-    };
-  };
 
   return (
     <div className="flex flex-col justify-center items-center h-screen p-8 sm:p-0">
@@ -59,7 +41,7 @@ export default function Home() {
         <CardContent>
           <CardTitle className="text-sm">Converted Value</CardTitle>
           <CardDescription className={cn(robotSlab.className, 'text-lg')}>
-            {value === '' ? 'NO VALUE' : value}
+            {value === '' ? 'NO VALUE' : integerToRoman(value)}
           </CardDescription>
         </CardContent>
       </Card>
