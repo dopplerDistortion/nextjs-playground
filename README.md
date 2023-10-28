@@ -1,35 +1,51 @@
-# Next.js + Jest
+# Next.js Playground Repository
 
-This example shows how to configure Jest to work with Next.js.
-
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript. This example also shows how to use Jest with the App Router and React Server Components.
-
-> **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-jest&project-name=with-jest&repository-name=with-jest)
+This repository is a playground for Next.js. It contains examples of how to use Next.js with various libraries and frameworks.
 
 ## How to Use
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
-
-In your terminal, run the following command:
+### Clone the Repository
 
 ```bash
-npx create-next-app --example with-jest with-jest-app
+git clone https://github.com/dopplerDistortion/nextjs-playground.git
 ```
+
+### Install Dependencies
 
 ```bash
-yarn create next-app --example with-jest with-jest-app
+yarn
 ```
+
+### Run the Development Server
 
 ```bash
-pnpm create next-app --example with-jest with-jest-app
+yarn dev
 ```
 
-## Running Tests
+### Running Tests
 
 ```bash
-npm test
+yarn test
 ```
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Make your changes and commit them: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature-name`
+5. Submit a pull request.
+
+## Powered By
+
+- [Next.js](https://nextjs.org/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Radix UI](https://radix-ui.com/)
+- [shadcn-ui](https://github.com/shadcn-ui/ui)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide](https://lucide.dev/)
