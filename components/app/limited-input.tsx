@@ -10,10 +10,16 @@ export function LimitedInput({setValue}: LimitedInputProps) {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.currentTarget.value;
-    if (
-      newValue === '' ||
-      (parseInt(newValue, 10) >= 1 && parseInt(newValue, 10) <= 1000)
-    ) {
+    if (newValue === '') {
+      setLocalValue(newValue);
+      setValue(newValue);
+      return;
+    }
+    if (!/^\d+$/.test(newValue)) {
+      event.preventDefault();
+      return;
+    }
+    if (parseInt(newValue, 10) >= 1 && parseInt(newValue, 10) <= 1000) {
       setLocalValue(newValue);
       setValue(newValue);
     } else {
