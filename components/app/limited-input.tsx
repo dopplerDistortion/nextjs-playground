@@ -30,6 +30,7 @@ export function LimitedInput({setValue}: LimitedInputProps) {
 
   return (
     <Input
+      data-testid="limited-input"
       value={value}
       onChange={handleChange}
       type="number"

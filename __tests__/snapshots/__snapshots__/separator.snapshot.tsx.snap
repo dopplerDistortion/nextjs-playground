@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders separator unchanged 1`] = `
+<div>
+  <div
+    data-orientation="horizontal"
+    role="separator"
+  />
+</div>
+`;
