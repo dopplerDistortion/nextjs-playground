@@ -1,7 +1,8 @@
 import '@/styles/global.css';
-import {ThemeProvider} from '@/components/theme/themeProvider';
+import {ThemeProvider} from '@/components/providers/theme-provider';
 import {cn} from '@/lib/utils';
 import {Nunito_Sans as FontSans} from 'next/font/google';
+import {ThemeWrapper} from '@/components/providers/theme-wrapper';
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          <main>{children}</main>
+          <ThemeWrapper>{children}</ThemeWrapper>
         </ThemeProvider>
       </body>
     </html>
