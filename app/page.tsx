@@ -1,47 +1,26 @@
 'use client';
+import {LimitedInput} from '@/components/app/limited-input';
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
 import {Input} from '@/components/ui/input';
-import {Label} from '@/components/ui/label';
 import {Separator} from '@/components/ui/separator';
-import {useState} from 'react';
+import {cn} from '@/lib/utils';
+import {useTheme} from 'next-themes';
+import {Roboto_Slab} from 'next/font/google';
+import {useEffect, useState} from 'react';
+
+export const robotSlab = Roboto_Slab({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 export default function Home() {
   const [value, setValue] = useState('');
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const keyValue = event.key;
-    // Allow Backspace key
-    if (keyValue === 'Backspace') {
-      return;
-    }
-    // Only allow numbers
-    if (!/^\d+$/.test(keyValue)) {
-      event.preventDefault();
-      return;
-    }
-    const newValue = event.currentTarget.value + keyValue;
-    // Only allow numbers between 1 and 1000
-    if (parseInt(newValue, 10) < 1 || parseInt(newValue, 10) > 1000) {
-      event.preventDefault();
-      return;
-    }
-    setValue(newValue);
-  };
-
-  const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const keyValue = event.key;
-    // Update value state if Backspace key is released
-    if (keyValue === 'Backspace') {
-      setValue(event.currentTarget.value);
-    }
-  };
 
   const convertToRoman = (num: number) => {
     const units = {
@@ -74,18 +53,13 @@ export default function Home() {
 
         <CardContent>
           <CardTitle className="text-sm">Integer Value</CardTitle>
-          <Input
-            type="number"
-            placeholder="Enter a number between 1 and 1000"
-            onKeyDown={handleKeyDown}
-            onKeyUp={handleKeyUp}
-            max="1000"
-          />
+          <LimitedInput value={value} setValue={setValue} />
         </CardContent>
+
         <CardContent>
           <CardTitle className="text-sm">Converted Value</CardTitle>
-          <CardDescription>
-            {value === '' ? 'Please type a value' : value}
+          <CardDescription className={cn(robotSlab.className, 'text-lg')}>
+            {value === '' ? 'NO VALUE' : value}
           </CardDescription>
         </CardContent>
       </Card>
