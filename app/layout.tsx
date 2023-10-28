@@ -20,13 +20,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         )}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange>
-          <ThemeWrapper>
-            {children}
-            <Analytics />
-          </ThemeWrapper>
+          <ThemeWrapper>{children}</ThemeWrapper>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
