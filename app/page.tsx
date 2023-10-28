@@ -7,12 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {Input} from '@/components/ui/input';
 import {Separator} from '@/components/ui/separator';
 import {cn, integerToRoman} from '@/lib/utils';
-import {useTheme} from 'next-themes';
 import {Roboto_Slab} from 'next/font/google';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 
 export const robotSlab = Roboto_Slab({
   subsets: ['latin'],
@@ -32,12 +30,10 @@ export default function Home() {
           </CardDescription>
           <Separator />
         </CardHeader>
-
         <CardContent>
           <CardTitle className="text-sm">Integer Value</CardTitle>
-          <LimitedInput value={value} setValue={setValue} />
+          <LimitedInput setValue={setValue} />
         </CardContent>
-
         <CardContent>
           <CardTitle className="text-sm">Converted Value</CardTitle>
           <CardDescription className={cn(robotSlab.className, 'text-lg')}>

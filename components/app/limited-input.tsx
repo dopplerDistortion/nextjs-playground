@@ -1,11 +1,10 @@
 import {Input} from '../ui/input';
 
 type LimitedInputProps = {
-  value: string;
   setValue: (value: string) => void;
 };
 
-export function LimitedInput({value, setValue}: LimitedInputProps) {
+export function LimitedInput({setValue}: LimitedInputProps) {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const keyValue = event.key;
     if (keyValue === 'Backspace') {
@@ -32,8 +31,8 @@ export function LimitedInput({value, setValue}: LimitedInputProps) {
   return (
     <Input
       type="number"
-      className="mt-2"
-      placeholder="Enter a number between 1 and 1000"
+      className="mt-2 placeholder:opacity-50"
+      placeholder="Number between 1 and 1000"
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       max="1000"
