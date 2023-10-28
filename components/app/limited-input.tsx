@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import {Input} from '../ui/input';
 
 type LimitedInputProps = {
@@ -5,36 +6,29 @@ type LimitedInputProps = {
 };
 
 export function LimitedInput({setValue}: LimitedInputProps) {
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const keyValue = event.key;
-    if (keyValue === 'Backspace') {
-      return;
-    }
-    if (!/^\d+$/.test(keyValue)) {
+  const [value, setLocalValue] = useState('');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.currentTarget.value;
+    if (
+      newValue === '' ||
+      (parseInt(newValue, 10) >= 1 && parseInt(newValue, 10) <= 1000)
+    ) {
+      setLocalValue(newValue);
+      setValue(newValue);
+    } else {
       event.preventDefault();
       return;
     }
-    const newValue = event.currentTarget.value + keyValue;
-    if (parseInt(newValue, 10) < 1 || parseInt(newValue, 10) > 1000) {
-      event.preventDefault();
-      return;
-    }
-    setValue(newValue);
   };
 
-  const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const keyValue = event.key;
-    if (keyValue === 'Backspace') {
-      setValue(event.currentTarget.value);
-    }
-  };
   return (
     <Input
+      value={value}
+      onChange={handleChange}
       type="number"
       className="mt-2 placeholder:opacity-50"
       placeholder="Number between 1 and 1000"
-      onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
       max={'1000'}
       min={'1'}
     />
