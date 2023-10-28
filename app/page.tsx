@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/card';
 import {Input} from '@/components/ui/input';
 import {Label} from '@/components/ui/label';
+import {Separator} from '@/components/ui/separator';
 import {useState} from 'react';
 
 export default function Home() {
@@ -68,8 +69,11 @@ export default function Home() {
           <CardDescription>
             Type number between 1 to 1000 inclusive
           </CardDescription>
+          <Separator />
         </CardHeader>
+
         <CardContent>
+          <CardTitle className="text-sm">Integer Value</CardTitle>
           <Input
             type="number"
             placeholder="Enter a number between 1 and 1000"
