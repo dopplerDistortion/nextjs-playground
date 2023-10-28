@@ -35,7 +35,8 @@ export function LimitedInput({setValue}: LimitedInputProps) {
       placeholder="Number between 1 and 1000"
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
-      max="1000"
+      max={'1000'}
+      min={'1'}
     />
   );
 }
