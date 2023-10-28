@@ -1,4 +1,14 @@
 'use client';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {Input} from '@/components/ui/input';
+import {Label} from '@/components/ui/label';
 import {useState} from 'react';
 
 export default function Home() {
@@ -52,15 +62,29 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen p-8 sm:p-0">
-      <div className="text-4xl font-bold mb-4 h-24">{value}</div>
-      <input
-        type="number"
-        placeholder="Enter a number between 1 and 1000"
-        className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-        onKeyDown={handleKeyDown}
-        onKeyUp={handleKeyUp}
-        max="1000"
-      />
+      <Card>
+        <CardHeader>
+          <CardTitle>Roman Numeral Converter</CardTitle>
+          <CardDescription>
+            Type number between 1 to 1000 inclusive
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Input
+            type="number"
+            placeholder="Enter a number between 1 and 1000"
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
+            max="1000"
+          />
+        </CardContent>
+        <CardContent>
+          <CardTitle className="text-sm">Converted Value</CardTitle>
+          <CardDescription>
+            {value === '' ? 'Please type a value' : value}
+          </CardDescription>
+        </CardContent>
+      </Card>
     </div>
   );
 }

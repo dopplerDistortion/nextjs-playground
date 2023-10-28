@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import {render, screen} from '@testing-library/react';
-import Home from 'app/page';
+import Home from '@/app/Home';
 
 describe('Home', () => {
   it('renders a heading', () => {

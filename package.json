@@ -12,6 +12,7 @@
     "pre-commit": "yarn lint && yarn format"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.290.0",
