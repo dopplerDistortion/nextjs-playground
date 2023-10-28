@@ -20,15 +20,15 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@/app/*": [
+        "app/*"
+      ],
       "@/components/*": [
         "components/*"
       ],
-      "@/pages/*": [
-        "pages/*"
+      "@/lib/*": [
+        "lib/*"
       ],
-      "@/styles/*": [
-        "styles/*"
-      ]
     },
     "plugins": [
       {
