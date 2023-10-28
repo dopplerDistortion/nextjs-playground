@@ -12,7 +12,7 @@ import {cn, integerToRoman} from '@/lib/utils';
 import {Roboto_Slab} from 'next/font/google';
 import {useState} from 'react';
 
-export const robotSlab = Roboto_Slab({
+const robotSlab = Roboto_Slab({
   subsets: ['latin'],
   variable: '--font-sans',
 });
